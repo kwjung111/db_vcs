@@ -1,3 +1,4 @@
 workspace/
 config.yaml
 logs/
+__pycache__/

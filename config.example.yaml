@@ -1,0 +1,33 @@
+#You should make your own config.yaml file 
+
+mode: ENTIRE 
+# WHEN_ALTERED, ENTIRE
+# Entire       : check all changes in your database. (trigger, procedure)
+#                check/commit all detected changes
+# WHEN_ALTERED : check if there have been any changes in previous ? day
+#                only commit changes that have occurred;
+#                do not check or commit all changes.
+interval_days: 2
+# This value specifies the interval for checking changes ( default is 1 )
+# Valid only when mode == WHEN_ALTERED 
+
+database:
+  dev:
+    host: 'host-dev'
+    port: '3306'
+    user: 'dev-user'
+    password: 'dev-pass'\
+  prd:
+    host: 'host-prd'
+    port: '3306'
+    user: 'prd-user'
+    password: 'prd-pass'
+    
+repository:
+  url: 'git-codecommit.ap-northeast-2.amazonaws.com/v1/repos/example-repo' #remove https
+  username: 'example-username'
+  password: 'example-password'
+
+logging:
+  level: INFO
+  file: app.log
